@@ -103,6 +103,9 @@ main {
 
 #display_all_contacts {
   display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  justify-items: center;
   flex-grow: 0;
   gap: 20px;
   padding: 20px;
