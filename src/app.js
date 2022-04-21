@@ -55,13 +55,13 @@ const contactsList = [
 const displayAllContacts = document.getElementById('display_all_contacts')
 const displaySingleContact = document.getElementById('display_single_contact')
 
-
+/* display all contacts */
 function createCard(contact) {
   let cardContainer = document.createElement('div')
   let cardName = document.createElement('div')
   let cardImage = document.createElement('img')
   cardContainer.className = 'card'
-  cardContainer.id = contact.id
+  cardContainer.id = contact.name
   cardName.innerHTML = contact.name
   cardImage.src = `img/${contact.image}`
   cardContainer.appendChild(cardName)
@@ -75,3 +75,25 @@ window.addEventListener('load', () => {
     createCard(contact)
   })
 });
+
+/*display single contact */
+
+displayAllContacts.addEventListener('click', (evt)=>{
+  let targetContact = evt.target.id
+  console.log(targetContact)
+  for (const contact of contactsList) {
+    if (contact['name'] == targetContact) {
+      const characterName = `<h1>${contact['name']}</h1>`
+      const characterPhone = `<p>${contact['phone']}</p>`
+      const characterImage = `<img src="img/${contact['image']}>`
+      const characterEmail = `<p>${contact['email']}</p>`
+      const singleContactContainer = document.createElement('div')
+      singleContactContainer.id = targetContact
+      singleContactContainer.appendChild(characterName)
+      singleContactContainer.appendChild(characterPhone)
+      singleContactContainer.appendChild(characterEmail)
+      singleContactContainer.appendChild(characterImage)
+      displaySingleContact.appendChild(singleContactContainer)
+    }
+  }
+})
