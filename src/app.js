@@ -52,3 +52,26 @@ const contactsList = [
 ]
 
 // Your code goes here
+const displayAllContacts = document.getElementById('display_all_contacts')
+const displaySingleContact = document.getElementById('display_single_contact')
+
+
+function createCard(contact) {
+  let cardContainer = document.createElement('div')
+  let cardName = document.createElement('div')
+  let cardImage = document.createElement('img')
+  cardContainer.className = 'card'
+  cardContainer.id = contact.id
+  cardName.innerHTML = contact.name
+  cardImage.src = `img/${contact.image}`
+  cardContainer.appendChild(cardName)
+  cardContainer.appendChild(cardImage)
+  displayAllContacts.appendChild(cardContainer)
+}
+
+
+window.addEventListener('load', () => {
+  contactsList.forEach(contact => {
+    createCard(contact)
+  })
+});
