@@ -58,7 +58,7 @@ const displaySingleContact = document.getElementById('display_single_contact')
 /* display all contacts */
 function createCard(contact) {
   let cardContainer = document.createElement('div')
-  let cardName = document.createElement('div')
+  let cardName = document.createElement('p')
   let cardImage = document.createElement('img')
   cardContainer.className = 'card'
   cardContainer.id = contact.name
@@ -77,7 +77,7 @@ window.addEventListener('load', () => {
 });
 
 /*display single contact */
-
+/*
 displayAllContacts.addEventListener('click', (evt)=>{
   let targetContact = evt.target.id
   console.log(targetContact)
@@ -97,3 +97,13 @@ displayAllContacts.addEventListener('click', (evt)=>{
     }
   }
 })
+*/
+/*
+displayAllContacts.addEventListener('click', (evt) => {
+  const childs = document.getElementsByClassName('card')
+  for (const child of childs) {
+    console.log(child)
+  }
+})
+*/
+
